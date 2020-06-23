@@ -7,7 +7,7 @@ describe('Noteful Endpoints', function() {
     before('make knex instance', () => {
         db = knex({
             client: 'pg',
-            connection: process.env.TEST_DB_URL
+            connection: process.env.TEST_DATABASE_URL
         })
         app.set('db', db)
     })
@@ -18,9 +18,10 @@ describe('Noteful Endpoints', function() {
 
     afterEach('cleanup', () => db.raw('TRUNCATE noteful_notes, noteful_folders RESTART IDENTITY CASCADE'))
 
+    //TODO test folders, notes
     describe(`GET /api/folders`, () => {
         context('Given there are folders in the database', () => {
-            
+            //test  
         })
     })
 })
